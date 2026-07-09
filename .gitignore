@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Локальная БД и артефакты сбора
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/combined-ca.pem
+
+.pytest_cache/
+.DS_Store
