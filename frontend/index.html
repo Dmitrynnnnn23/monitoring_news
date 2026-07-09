@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мониторинг макроэкономических новостей · Россия</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1>Мониторинг макроэкономических новостей</h1>
+        <span class="subtitle">Россия · официальные источники</span>
+      </div>
+      <div class="status">
+        <span id="last-updated" class="last-updated" title="Время последнего успешного сбора">—</span>
+        <button id="refresh-btn" class="btn btn-primary" title="Запустить сбор по всем источникам">
+          Обновить сейчас
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="filters" aria-label="Фильтры">
+      <div class="filter">
+        <label for="f-source">Источник</label>
+        <select id="f-source">
+          <option value="">Все источники</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="f-category">Категория</label>
+        <select id="f-category">
+          <option value="">Все категории</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="f-from">С даты</label>
+        <input type="date" id="f-from">
+      </div>
+      <div class="filter">
+        <label for="f-to">По дату</label>
+        <input type="date" id="f-to">
+      </div>
+      <div class="filter filter-grow">
+        <label for="f-q">Поиск</label>
+        <input type="search" id="f-q" placeholder="ставка, инфляция, бюджет…">
+      </div>
+      <div class="filter filter-reset">
+        <button id="reset-btn" class="btn">Сбросить</button>
+      </div>
+    </section>
+
+    <div id="feed-info" class="feed-info"></div>
+    <section id="feed" class="feed" aria-live="polite"></section>
+    <div class="load-more-wrap">
+      <button id="load-more" class="btn" hidden>Показать ещё</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Источники: Банк России, Росстат, Минфин России, ТАСС, Интерфакс.
+      Отметка <span class="verified-mark" title="Официальный первоисточник">✓</span> —
+      официальный первоисточник; сообщения информагентств содержат ссылку на оригинал.
+    </p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
